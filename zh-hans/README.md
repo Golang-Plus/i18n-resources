@@ -7,5 +7,5 @@ This package providers **zh-Hans** resources for [i18n](https://github.com/golan
 
 
     import (
-        _ "github.com/golang-plus/i18n-resources/zh-Hans"
+        _ "github.com/golang-plus/i18n-resources/zh-hans"
     )
