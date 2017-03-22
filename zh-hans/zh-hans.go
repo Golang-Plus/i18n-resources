@@ -10,29 +10,29 @@ func init() {
 
 	for code, name := range languageNames {
 		language := i18n.GetLanguage(code)
-		//if language != nil {  // we need panic if data wrong
-		language.Name.SetValue(lang, name)
-		//}
+		if language != nil {
+			language.Name.SetValue(lang, name)
+		}
 	}
 
 	for code, name := range countryNames {
 		country := i18n.GetCountry(nil, code)
-		//if country != nil {  // we need panic if data wrong
-		country.Name.SetValue(lang, name)
-		//}
+		if country != nil {
+			country.Name.SetValue(lang, name)
+		}
 	}
 
 	for code, name := range currencyNames {
 		currency := i18n.GetCurrency(code)
-		//if currency != nil {  // we need panic if data wrong
-		currency.Name.SetValue(lang, name)
-		//}
+		if currency != nil {
+			currency.Name.SetValue(lang, name)
+		}
 	}
 
 	for code, name := range cultureNames {
 		culture := i18n.GetCulture(code)
-		//if cculture != nil {  // we need panic if data wrong
-		culture.Name.SetValue(lang, name)
-		//}
+		if culture != nil {
+			culture.Name.SetValue(lang, name)
+		}
 	}
 }
