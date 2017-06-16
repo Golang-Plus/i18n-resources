@@ -6,32 +6,32 @@ import (
 
 // load resources.
 func init() {
-	lang := i18n.GetLanguage("zh-Hans")
+	lang, _ := i18n.LookupLanguage("zh-Hans")
 
 	for code, name := range languageNames {
-		language := i18n.GetLanguage(code)
-		if language != nil {
+		language, ok := i18n.LookupLanguage(code)
+		if ok {
 			language.Name.SetValue(lang, name)
 		}
 	}
 
 	for code, name := range countryNames {
-		country := i18n.GetCountry(nil, code)
-		if country != nil {
+		country, ok := i18n.LookupCountry(nil, code)
+		if ok {
 			country.Name.SetValue(lang, name)
 		}
 	}
 
 	for code, name := range currencyNames {
-		currency := i18n.GetCurrency(code)
-		if currency != nil {
+		currency, ok := i18n.LookupCurrency(code)
+		if ok {
 			currency.Name.SetValue(lang, name)
 		}
 	}
 
 	for code, name := range cultureNames {
-		culture := i18n.GetCulture(code)
-		if culture != nil {
+		culture, ok := i18n.LookupCulture(code)
+		if ok {
 			culture.Name.SetValue(lang, name)
 		}
 	}
